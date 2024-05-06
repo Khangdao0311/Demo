@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{ 
+            margin: 0;
+            box-sizing: border-box;
+        }
+        main {
+            width: 50vw;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: yellowgreen;
+        }
+        textarea {
+            padding: 20px;
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <textarea name="" id="" cols="30" rows="10" ></textarea>
+    </main>
+    <script>
+        // vô hiệu chuột phải
+        function disableDefault(event) {
+            event.preventDefault()
+        }
+        document.addEventListener('contextmenu',disableDefault)
+        
+        //vô hiệu phím tắt
+        document.addEventListener('keydown',event => {
+            if (event.ctrlKey && ( event.key === 'c' || event.key === 'x') ) {
+                event.preventDefault()
+            }
+        })
+
+        // vô hiệu hóa kéo thả văn bản
+        document.addEventListener('dragstart',disableDefault)
+
+
+
+    </script>
+</body>
+</html>
