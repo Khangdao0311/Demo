@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: green;
+        }
+        .container {
+            width: 100vw;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+        }
+        .show-modal {
+            padding: 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 20px;
+            color: #000;
+            background-color: #FFF;  
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+        .show-modal:hover {
+            color: white;
+            background-color: green;
+            border: 1px solid #FFF;
+            transform: scale(1.05);
+        }
+        .modal {
+            width: 500px;
+            height: 300px;
+            background-color: rgb(228, 9, 9);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            border-radius: 20px;
+            box-shadow: 0 0 5px black;
+        }
+        .cancel {
+            margin: 5px ;
+            padding: 5px 15px;
+            display: inline;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        .cancel:hover {
+            color: #FFF;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="show-modal">Show modal</div>
+    </div>
+    <script>
+        const btnsOppenModal = document.querySelector('.show-modal')
+        const modal = document.createElement('div')
+        btnsOppenModal.addEventListener('click', () => {
+                modal.classList.add('modal')
+                modal.innerHTML = `<div onclick="cancel()" class="cancel">X</div>`
+                document.body.appendChild(modal)
+            })
+        function cancel() {
+            document.body.removeChild(modal)
+        }
+    </script>
+</body>
+</html>
