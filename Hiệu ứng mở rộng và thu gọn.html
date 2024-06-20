@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiệu ứng mở rộng và thu gọn</title>
+    <style>
+        main {
+            width: 500px;
+            margin: 50px auto;
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .show {
+            background-color: aqua;
+            padding: 0 10px;
+            transition: all 0.2s linear;
+            height: 0;
+            overflow: hidden;
+        }
+        .show > div {
+            padding: 5px;
+        }
+        #toggle:checked ~ .show {
+            height: 150px;
+            /* padding: 10px; */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <input hidden type="checkbox" id="toggle" />
+        <label for="toggle">Click here</label>
+        <div class="show">
+            <div>Nội dung 1</div>
+            <div>Nội dung 2</div>
+            <div>Nội dung 3</div>
+            <div>Nội dung ...</div>
+        </div>
+    </main>
+</body>
+</html>

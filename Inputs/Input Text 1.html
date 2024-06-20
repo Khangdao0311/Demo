@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Text</title>
+    <style>
+        .form-control {
+            position: relative;
+            margin: 20px 0 40px;
+            width: 190px;
+            margin: 100px auto;
+        }   
+        input {
+            border: none;
+            outline: none;
+            border-bottom: 2px #000 solid;
+            width: 100%;
+            color: #000;
+            padding: 5px;
+        }
+        label {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+        span {
+            color: #000;
+            transition: all 0.15s;
+        }
+
+        input:focus ~ label > span,
+        input:valid ~ label > span {
+            transform: translateY(-25px);
+            color: red;
+            font-weight: 600;
+        }
+        input:focus,
+        input:valid {
+            transition-delay: 175ms;
+            transition-timing-function: ease-in-out;
+            border-bottom: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-control">
+        <input required="" type="text">
+        <label>
+            <span style="transition-delay:175ms">U</span>
+            <span style="transition-delay:150ms">s</span>
+            <span style="transition-delay:125ms">e</span>
+            <span style="transition-delay:100ms">r</span>
+            <span style="transition-delay:75ms">n</span>
+            <span style="transition-delay:50ms">a</span>
+            <span style="transition-delay:25ms">m</span>
+            <span style="transition-delay:0ms">e</span>
+        </label>
+    </div>
+</body>
+</html>
