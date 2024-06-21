@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #overlay {
+            position: fixed;
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+        .box {
+            padding: 100px 200px;
+            background-color: white;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="on()">Click Here</button>
+    <div id="overlay" onclick="off()">
+        <div class="box">This is Overlay</div>
+    </div>
+    <script>
+        function on() {
+            document.getElementById("overlay").style.display = "flex";
+        }
+
+        function off() {
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+</body>
+</html>
