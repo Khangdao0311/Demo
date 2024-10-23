@@ -74,4 +74,16 @@
       console.log("file deleted successfully");
     });
   }
+
+  **Mã hóa mật khẩu trong NodeJS sử dụng thư viện bcryptjs {
+    -- npm i bcryptjs 
+
+    var bcryptjs = require("bcryptjs");
+
+    const salt = bcryptjs.genSaltSync(10);
+    const hash = bcryptjs.hashSync(password, salt);
+
+    bcryptjs.compareSync(password, data.password)
+
+  }
 ]
