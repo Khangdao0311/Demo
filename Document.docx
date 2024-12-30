@@ -84,6 +84,24 @@
     const hash = bcryptjs.hashSync(password, salt);
 
     bcryptjs.compareSync(password, data.password)
+  }
+  
+  **Cài đặt jsonserver {
+    -- mkdir name_project
+    -- cd name_project
 
+    -- npm init -y
+    -- npm install json-server
+
+    Tạo file data.json 
+    {
+      "products": [
+        { "id": 1, "name": "Product 1", "price": 10 },
+        { "id": 2, "name": "Product 2", "price": 20 },
+        { "id": 3, "name": "Product 3", "price": 30 }
+      ]
+    }
+
+    -- json-server --watch data.json --port 3000
   }
 ]
